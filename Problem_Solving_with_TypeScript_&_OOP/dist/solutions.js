@@ -9,4 +9,24 @@ const multiplyValue = (value, multiplier) => {
         return value * 2;
     }
 };
+const processInput = (x) => {
+    if (typeof x === "string") {
+        return x.trim().toLowerCase();
+    }
+    else if (typeof x === "number") {
+        return x * 10;
+    }
+    else {
+        if (x === true) {
+            return "Active";
+        }
+        else {
+            return "Inactive";
+        }
+    }
+};
+console.log(processInput("  TypeScript  "));
+console.log(processInput(7));
+console.log(processInput(true));
+console.log(processInput(false));
 export {};
