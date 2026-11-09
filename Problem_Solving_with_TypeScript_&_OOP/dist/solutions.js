@@ -31,4 +31,8 @@ const formatCoordinate = (tuple) => {
 const concatenateArrays = (...arrays) => {
     return arrays.flat();
 };
+const getPopularCourses = (courses, minStudents) => {
+    const result = (courses.filter((course) => course.students >= minStudents && course.isPublished === true));
+    return result;
+};
 export {};
