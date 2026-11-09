@@ -35,4 +35,10 @@ const getPopularCourses = (courses, minStudents) => {
     const result = (courses.filter((course) => course.students >= minStudents && course.isPublished === true));
     return result;
 };
+const pluckValues = (items, key) => {
+    const result = items.map((item) => {
+        return item[key];
+    });
+    return result;
+};
 export {};
