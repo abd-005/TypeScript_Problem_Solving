@@ -30,5 +30,21 @@ const formatCoordinate = (tuple: readonly [number, number, string]): string => {
     return `Location: ${tuple[2]} (${tuple[0]}, ${tuple[1]})`;
 }
 
-console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
+
+const concatenateArrays = <T> (...arrays: T[][]): Array<T> => {
+    return arrays.flat();
+    
+}
+
+interface Course {
+    title: string,
+    students: number,
+    isPublished: boolean,
+}
+
+const getPopularCourses = (courses: Course[], minStudents: number): Course[] => {
+    const result = (courses.filter((course)=> course.students >= minStudents && course.isPublished === true));
+    return result;
+}
+
+
